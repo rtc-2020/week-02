@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   console.log('The DOM is ready for action');
-})
+});
 
 var h1 = document.querySelector('h1');
 
