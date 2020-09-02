@@ -43,6 +43,14 @@ doSoon
     console.log(`doSoon returned the interpolated result "${result}"`);
   });
 
+async function letsWait() {
+  console.log('Currently in the letsWait async function...');
+  var result = await wait(2000);
+  console.log('Okay...the demo async thing happened. Carry on.');
+}
+
+letsWait();
+
 /*
 document.addEventListener('DOMContentLoaded', function(){
   console.log('The DOM is ready for action');
