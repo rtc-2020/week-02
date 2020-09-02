@@ -1,15 +1,20 @@
-if ('fetch' in window) {
-  fetch('https://api.github.com/users/karlstolley')
-    .then(function(result) {
-      return result.json();
-    })
-    .then(function(result) {
-      console.log('The username we returned is ' + result.login);
-    })
-    .catch(function(error) {
-      console.error('Error:' + error.msg);
-    });
-}
+(function() {
+    if ('fetch' in window) {
+    fetch('https://api.github.com/users/karlstolley')
+      .then(function(result) {
+        return result.json();
+      })
+      .then(function(result) {
+        console.log('The username we returned is ' + result.login);
+      })
+      .catch(function(error) {
+        console.error('Error:' + error.msg);
+      });
+  } else {
+    // Exit the IIFE real fast if you don't have fetch...
+    return;
+  }
+})();
 
 function wait(time) {
   return new Promise(function(resolve,reject) {
