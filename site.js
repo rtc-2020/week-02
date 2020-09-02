@@ -1,3 +1,32 @@
+var g = document.querySelector('#google');
+
+g.addEventListener('click', function(event) {
+  // open the link in a new window
+  window.open(event.target.href, 'google');
+  event.preventDefault();
+});
+
+var simpleEvent = new Event('simple',{"bubbles":true, "cancelable":false});
+
+document.addEventListener('simple', function() {
+  console.log('OMG, a simple event just happened');
+});
+
+document.dispatchEvent(simpleEvent);
+
+
+var customEvent = new CustomEvent('special',
+  {bubbles: true, detail: { content: 'A very special event' }});
+
+document.addEventListener('special', function(event) {
+  console.log(`SPECIAL EVENT: ${event.detail.content}`);
+});
+
+document.dispatchEvent(customEvent);
+
+
+
+
 (function() {
     if ('fetch' in window) {
     fetch('https://api.github.com/users/karlstolley')
