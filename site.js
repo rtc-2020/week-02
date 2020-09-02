@@ -11,6 +11,22 @@ if ('fetch' in window) {
     });
 }
 
+function wait(time) {
+  return new Promise(function(resolve,reject) {
+    setTimeout(resolve, time);
+  });
+}
+
+// Old-school callback-style async
+setTimeout(function(){
+  console.log('Hey, I waited a second, too!')
+}, 1000);
+
+// New-school promisified setTimeout
+wait(1000)
+  .then(function(result) {
+    console.log('Hey! I waited at least a second');
+  });
 
 /*
 document.addEventListener('DOMContentLoaded', function(){
