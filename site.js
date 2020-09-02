@@ -67,3 +67,5 @@ setTimeout(function() {
   }, 5000);
 console.log("Buckle my shoe");
 */
+
+console.log('I am a synchrnous. I refuse to wait.');
