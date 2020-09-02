@@ -1,5 +1,14 @@
 if ('fetch' in window) {
-  //gogetit('https://api.github.com/users/karlstolley');
+  fetch('https://api.github.com/users/karlstolley')
+    .then(function(result) {
+      return result.json();
+    })
+    .then(function(result) {
+      console.log('The username we returned is ' + result.login);
+    })
+    .catch(function(error) {
+      console.error('Error:' + error.msg);
+    });
 }
 
 
