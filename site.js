@@ -33,6 +33,16 @@ wait(1000)
     console.log('Hey! I waited at least a second');
   });
 
+// Working with promises directly
+var doSoon = new Promise(function(resolve,reject){
+  resolve('Great success!');
+});
+
+doSoon
+  .then(function(result) {
+    console.log(`doSoon returned the interpolated result "${result}"`);
+  });
+
 /*
 document.addEventListener('DOMContentLoaded', function(){
   console.log('The DOM is ready for action');
