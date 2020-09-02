@@ -2,6 +2,8 @@ if ('fetch' in window) {
   //gogetit('https://api.github.com/users/karlstolley');
 }
 
+
+/*
 document.addEventListener('DOMContentLoaded', function(){
   console.log('The DOM is ready for action');
 });
@@ -24,3 +26,4 @@ setTimeout(function() {
     console.log("Two")
   }, 5000);
 console.log("Buckle my shoe");
+*/
